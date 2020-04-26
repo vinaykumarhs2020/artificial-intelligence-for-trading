@@ -1,0 +1,18 @@
+version: '3.3'
+services:
+    project_1:
+        build: 
+            context: ../
+            dockerfile: docker/Project_1/Dockerfile
+        image: project_1:latest
+        volumes: 
+            -   type: bind
+                source: "../data"
+                target: "/home/jovyan/udacity/data"
+            -   type: bind
+                source: "../"
+                target: "/home/jovyan/udacity"
+        ports:
+            - 8888:8888
+
+    
